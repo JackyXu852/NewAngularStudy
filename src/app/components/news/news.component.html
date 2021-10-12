@@ -1,0 +1,47 @@
+
+<h2>{{title}}</h2>
+<h2>{{num}}</h2>
+<h2>{{obj.a}}</h2>
+<h2>{{obj.b}}</h2>
+<h2>{{arr}}</h2>
+<h2>{{message}}</h2>
+
+<h2 [title]="title">鼠标移上来</h2>
+
+<div>{{content}}</div>
+<!--html识别有问题-->
+<!--<span [innerHTML]="content"]>angular识别html</span>-->
+
+<div>{{1+2}}</div>
+
+*ngFor
+<ul>
+  <li *ngFor="let item of newArr;let keyindex = index">{{keyindex}}---{{item.username}}---{{item.age}}</li>
+</ul>
+*ngIf
+<div *ngIf="flag">*ngIf条件判断</div>
+
+<div [ngSwitch]="orderStatus">
+  <div *ngSwitchCase="1">待付款</div>
+  <div *ngSwitchCase="2">待发货</div>
+  <div *ngSwitchCase="3">待收货</div>
+  <div *ngSwitchCase="4">已完成</div>
+</div>
+
+<ul>
+  <li *ngFor="let item of newArr;let keyindex = index"
+      [ngClass]="{'activeRed':keyindex === 0,'activeGreen':keyindex === 1,'activeBlue':keyindex === 2}">
+    {{keyindex}}---{{item.username}}---{{item.age}}
+  </li>
+</ul>
+
+<div [ngClass]="['activeRed','activeFont']">啊啊啊啊</div>
+<div [ngClass]="'activeRed activeFont'">pppp</div>
+<div [ngStyle]="{'color':'red'}">ooooo</div>
+<div [ngStyle]="{'color':myColor}">uuuuuu</div>
+
+<h2>管道--->类似vue中的过滤 | </h2>
+
+<div>{{myDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+<button (click)="run()">点击事件</button>

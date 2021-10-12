@@ -1,0 +1,12 @@
+<h1>{{msg}}</h1>
+<div #mydiv class="mydiv">我是一个div</div>
+<div #mybox class="mybox" id="mybox">我是一个mybox</div>
+
+<button (click)="changeBox()">切换</button>
+<button (click)="getMsg()">获取父组件msg</button>
+<button (click)="getRun()">执行父组件run方法</button>
+<button (click)="sendParent()">子组件数据传给父组件</button>
+
+<app-news #news></app-news>
+
+
